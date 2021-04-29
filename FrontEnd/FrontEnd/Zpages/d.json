@@ -1,0 +1,16 @@
+{"nodes":[
+	{"id": "F0C0E1","type": "E"},
+	{"id": "F0C0","type": "C"},
+	{"id": "F0C0R1","type": "R"},
+	{"id": "F0C0R2","type": "R"},
+	{"id": "F0C0R3","type": "R"},
+	{"id": "F0C0R4","type": "R"}
+],
+	"links":[
+	{"source":"F0C0E1","target":"F0C0","value": 1},
+	{"source":"F0C0","target":"F0C0R1","value": 1},
+	{"source":"F0C0","target":"F0C0R2","value": 1},
+	{"source":"F0C0","target":"F0C0R3","value": 1},
+	{"source":"F0C0","target":"F0C0R4","value": 1}
+]
+}

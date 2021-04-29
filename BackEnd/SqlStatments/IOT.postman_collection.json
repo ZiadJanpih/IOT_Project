@@ -1,0 +1,1171 @@
+{
+	"info": {
+		"_postman_id": "6c88ba9b-9379-412b-acf9-b85d9692f8f6",
+		"name": "IOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Registeration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fname\" : \"Amer\",\n    \"lname\" : \"Al Khoury\",\n\t\"email\" : \"amer.alkhoury89@gmail.com\",\n\t\"password\" : \"amer13689\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"amer.alkhoury89@gmail.com\",\n\t\"password\" : \"amer13689\",\n\t\"deviceId\": \"device10\",\n\t\"notificationToken\": \"token10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4MDk3MTJjYS0wNGFiLTQ1ZmYtOTRlMy0wZTA0NDZkMDhhNjciLCJmbmFtZSI6IkFtZXIiLCJsbmFtZSI6IkFsIEtob3VyeSIsImVtYWlsIjoiYW1lci5hbGtob3VyeTg5QGdtYWlsLmNvbSIsImlhdCI6MTYwNTQzNzAzM30.s16Ur1PfwQRZc9fAY_ro0zoYAPXOaz22aVg4HsNM6VY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/refreshToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "addSuperAdmin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addSuperAdmin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addSuperAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AdminLogin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"superadmin\",\n    \"password\": \"superadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/adminLogin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"adminLogin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAdmins",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getAdmins",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getAdmins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddAdmin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"amerk2\",\n    \"password\": \"1234567890\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addAdmin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RefreshToken",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk2MDQ2MH0.K7RxagooXzgbkTiQbAr0RViQTQHHTHhM2t0CM1rs83Y\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/adminRefreshToken",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"adminRefreshToken"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeAdminStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userid\": \"311cd293-a141-40cd-b45d-dceb4ab72b2b\",\n    \"status\": \"0\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/changeAdminStatus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"changeAdminStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Browsing",
+					"item": [
+						{
+							"name": "GetBuildings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getBuildings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getBuildings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddBuilding",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk4MjU2OCwiZXhwIjoxNjA1OTgzNDY4fQ.7bIkGA5D1jrknZz2X3XWEPwgq6GdiwbSpF0j-842Fpw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"Building2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addBuilding",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addBuilding"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeBuildingStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"buildingId\": \"44f80b05-245a-4167-a932-69e9ef309c8e\",\n\t\"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/changeBuildingStatus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"changeBuildingStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetFloors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getFloors?BuildingId=ede603da-fc06-430d-a47d-ebeae72f2f51",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getFloors"
+									],
+									"query": [
+										{
+											"key": "BuildingId",
+											"value": "ede603da-fc06-430d-a47d-ebeae72f2f51"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddFloor",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"buildingId\" : \"ede603da-fc06-430d-a47d-ebeae72f2f51\",\n\t\"floorNumber\" : 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addFloor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addFloor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeFloorStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"floorid\": \"b9a4764b-684a-49f9-8b85-5e82892ddb76\",\n\t\"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/changeFloorStatus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"changeFloorStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCorridors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getCorridors?FloorId=be2c2f6a-e2fe-4e5b-a1b4-7e6daa93bc07",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getCorridors"
+									],
+									"query": [
+										{
+											"key": "FloorId",
+											"value": "be2c2f6a-e2fe-4e5b-a1b4-7e6daa93bc07"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddCorridor",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"floorId\" : \"be2c2f6a-e2fe-4e5b-a1b4-7e6daa93bc07\",\n    \"corridorNumber\" : 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addCorridor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addCorridor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeCorridorStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNzY5NjQ0NH0.-my5LhgukzTqkzGCctzFoxCIUcSbz7BKfzdt-eb0jQ8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"corridorId\" : \"8fcb430a-3f90-41a8-bd61-f7382f6f5f42\",\n    \"status\" : 1,\n    \"maxquantity\" : 30\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/changeCorridorStatus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"changeCorridorStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddCorridorConnection",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fromCorridor\" : \"8fcb430a-3f90-41a8-bd61-f7382f6f5f42\",\n    \"toCorridor\" : \"9be335b9-acd1-4d8a-b95c-74861fd0b289\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addCorridorConnection",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addCorridorConnection"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveCorridorConnection",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fromCorridor\" : \"8fcb430a-3f90-41a8-bd61-f7382f6f5f42\",\n    \"toCorridor\" : \"9be335b9-acd1-4d8a-b95c-74861fd0b289\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/removeCorridorConnection",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"removeCorridorConnection"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCorridorConnections",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNTk3NzM5NywiZXhwIjoxNjA1OTc4Mjk3fQ.Fh8ezCrtdsfyUrSLlx0yIZhXTMWvx_xcZpH0hQhMpN8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getCorridorConnections?CorridorId=8fcb430a-3f90-41a8-bd61-f7382f6f5f42",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getCorridorConnections"
+									],
+									"query": [
+										{
+											"key": "CorridorId",
+											"value": "8fcb430a-3f90-41a8-bd61-f7382f6f5f42"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetFullCorridorConnections",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNjIxNjkyOCwiZXhwIjoxNjA2MjE3ODI4fQ.ph8dZ3HluJmRrttfhpC7q4J3gcEw6C2mZDLIYeLeYWs",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getFullCorridorConnections?CorridorId=8fcb430a-3f90-41a8-bd61-f7382f6f5f42",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getFullCorridorConnections"
+									],
+									"query": [
+										{
+											"key": "CorridorId",
+											"value": "8fcb430a-3f90-41a8-bd61-f7382f6f5f42"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetRooms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getRooms?CorridorId=88ef3ea1-f8e5-48ba-8e12-d8054b85b7a4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getRooms"
+									],
+									"query": [
+										{
+											"key": "CorridorId",
+											"value": "88ef3ea1-f8e5-48ba-8e12-d8054b85b7a4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddRoom",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"corridorId\" : \"d03879e2-8324-469b-b362-f819a297544d\",\n\t\"roomNumber\" : 3,\n    \"isRoom\" : 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/addRoom",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addRoom"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeRoomStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwNzY5NTU4NCwiZXhwIjoxNjA3Njk2NDg0fQ.ayc5bvM7NkxvkjvkN1JkADfZP5pPBzUyFI19XbS4z0k",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"roomid\" : \"57ece48e-884d-42f6-98cd-de99937e6096\",\n\t\"status\": 1,\n    \"maxquantity\": 30\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/changeRoomStatus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"changeRoomStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllUsers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM4MzQ1NH0.A9bGau8Z9MUBg8zDC1abxZ0lb_UlGujWXlwv-DeDZyU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getAllUsers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getAllUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUsersDevices",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM4MzQ1NH0.A9bGau8Z9MUBg8zDC1abxZ0lb_UlGujWXlwv-DeDZyU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getUsersDevices?userId=809712ca-04ab-45ff-94e3-0e0446d08a67",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getUsersDevices"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "809712ca-04ab-45ff-94e3-0e0446d08a67"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBuildingCorridors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODM3MzkyMH0.xZd_xQSFpsIupm17WyQpeCjIn9-jiW0AIkgtsS12oW4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/getBuildingCorridors?BuildingId=0efd5763-f75e-454a-a86d-0c7d6c235912",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getBuildingCorridors"
+									],
+									"query": [
+										{
+											"key": "BuildingId",
+											"value": "0efd5763-f75e-454a-a86d-0c7d6c235912"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reports",
+					"item": [
+						{
+							"name": "getRCReport",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODE1NTA4MH0.Fr0YZlLtt3CM171iGkYx-vchGR1bX1Nd8iyCtHagN3M",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"buildingId\" : \"ede603da-fc06-430d-a47d-ebeae72f2f51\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/getRCReport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getRCReport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getDWReport",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODE1NTA4MH0.Fr0YZlLtt3CM171iGkYx-vchGR1bX1Nd8iyCtHagN3M",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"buildingId\": \"ede603da-fc06-430d-a47d-ebeae72f2f51\",\n    \"date\": \"2020-12-16\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/getDWReport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"getDWReport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AvgPerHourReport",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODE1NTA4MH0.Fr0YZlLtt3CM171iGkYx-vchGR1bX1Nd8iyCtHagN3M",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entityId\": \"ede603da-fc06-430d-a47d-ebeae72f2f51\",\n    \"type\": \"Building\",\n    \"aggregationType\": \"Yearly\",\n    \"fromDate\": \"2021-01-01\",\n    \"toDate\": \"2021-01-31\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/avgPerHourReport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"avgPerHourReport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "minMaxReport",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmYjhmNzhiLTZhNjYtNDg4YS05ODk1LTE5MDJhNTFmNDc2MSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImlzYWN0aXZlIjoxLCJhY2Nlc3NUb2tlbiI6IiIsInJlZnJlc2hUb2tlbiI6IiIsImlhdCI6MTYwODE1NTA4MH0.Fr0YZlLtt3CM171iGkYx-vchGR1bX1Nd8iyCtHagN3M",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entityId\": \"9be335b9-acd1-4d8a-b95c-74861fd0b289\",\n    \"type\": \"Corridor\",\n    \"aggregationType\": \"Hourly\",\n    \"fromDate\": \"2020-12-11\",\n    \"toDate\": \"2020-12-20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/minMaxReport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"minMaxReport"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sensor",
+			"item": [
+				{
+					"name": "CheckSensor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setNextRequest(\"checkSensor\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sensorEntityId\" : \"3bc15270-fd9b-4ebe-ab24-cd5e1a3d0e87\",\n    \"NumberOfCurrentUsers\": 16,\n    \"macAddresses\" : [\n        \"device1\",\n        \"device2\",\n        \"device3\",\n        \"device4\",\n        \"device5\",\n        \"device6\",\n        \"d0007bc1-ec14-4f20-a661-f86e58c6656d\",\n        \"012f10f4-6e58-43d3-af91-f2d51bdf6434\",\n        \"256d0b72-2169-4c30-a67f-739123a7ac5a\",\n        \"3b5cd26f-27a6-4ebd-a9f7-c3d5115a61a5\",\n        \"76e29706-1645-4dd8-afcc-3adad17fde41\",\n        \"7fe7015f-df7f-4f6e-b818-50cf686ab12b\",\n        \"995fae81-54be-47d4-8be2-f05ce2d56e1d\",\n        \"d3c58e55-9142-4f1e-b1fa-db95b6ef86b7\",\n        \"71b39093-87b2-46ea-8286-c26e8ba0d379\",\n        \"ce7c7010-0006-4735-a8c9-e40403fddefa\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/checkSensor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"checkSensor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AddData",
+			"item": [
+				{
+					"name": "AddUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/AddUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"AddUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCheckLog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/AddCheckLog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"AddCheckLog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddUsersDevices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/AddUsersDevices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"AddUsersDevices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
